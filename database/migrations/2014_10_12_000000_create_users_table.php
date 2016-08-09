@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('avatar');
-            $table->integer('steamid');
+            $table->bigInteger('steamid');
             $table->string('weapon');
             $table->integer('time_played');
             $table->double('win', 10, 2);
