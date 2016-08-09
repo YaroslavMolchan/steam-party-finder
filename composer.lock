@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c284a9c122da36c99a8b6597bdce7aa6",
-    "content-hash": "8b1485987e7c5949da82435d403e52e8",
+    "hash": "b55a53734940cd519cd7f451e775caee",
+    "content-hash": "51885d23da1d90202aaf89c6000dbc57",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -160,6 +160,48 @@
                 "string"
             ],
             "time": "2015-11-06 14:35:42"
+        },
+        {
+            "name": "ehesp/steam-login",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Ehesp/Steam-Login.git",
+                "reference": "a126370d9befb103dcee2c75b70890543b365709"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Ehesp/Steam-Login/zipball/a126370d9befb103dcee2c75b70890543b365709",
+                "reference": "a126370d9befb103dcee2c75b70890543b365709",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "suggest": {
+                "koraktor/steam-condenser": "Library for querying the Steam Community, Source and GoldSrc game servers as well as the Steam master servers."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Ehesp\\SteamLogin": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Elliot Hesp",
+                    "email": "elliot.hesp@gmail.com"
+                }
+            ],
+            "description": "A simple PHP Steam login and validation package",
+            "keywords": [
+                "steam"
+            ],
+            "time": "2016-04-14 16:24:31"
         },
         {
             "name": "jakub-onderka/php-console-color",
