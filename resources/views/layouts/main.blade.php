@@ -1,53 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="viewport" content="width=device-width"/>
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Passion+One|Cantarell:400,400italic,700' rel='stylesheet'
+          type='text/css'>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/youplay-anime.min.css">
+    <link rel="stylesheet" href="/css/custom.css">
     <title>TITLE</title>
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
+
+<nav class="navbar-youplay navbar navbar-default navbar-fixed-top navbar-small">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+            <button type="button" class="navbar-toggle collapsed" data-toggle="off-canvas" data-target="#navbar"
                     aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="index.html">
+                <img src="/images/logo.png" alt="">
+            </a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+        <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="/">Home</a></li>
-                <li><a href="#about">About</a></li>
-                @if (!\Auth::guest())
-                    <li><a href="/auth/logout">Logout</a></li>
+                <li>
+                    <a href="index.html#lobbies">Find team</a>
+                </li>
+                <li>
+                    <a href="index.html#about">About</a>
+                </li>
+                <li>
+                    <a href="index.html#share">Share</a>
+                </li>
+                @if (\Auth::guest())
+                    <li><a href="{{ SteamLogin::url(url('/login')) }}">Login</a></li>
                 @else
-                    <li><a href="/default/login">Login</a></li>
+                    <li><a href="/logout">Logout</a></li>
                 @endif
             </ul>
-        </div><!--/.nav-collapse -->
+        </div>
     </div>
 </nav>
 
-<div class="container">
-    <div style="padding: 70px 15px; text-align: center;">
-        @yield('content')
-    </div>
-</div><!-- /.container -->
+{{--@yield('content')--}}
+<section class="content-wrap">
+    <section class="youplay-banner banner-top big" data-parallax="scroll" data-z-index="1" data-natural-height="654"
+             data-natural-width="1400" data-image-src="/images/banner-bg.jpg">
+        <div class="info">
+            <div>
+                <div class="container">
+                    <h1>CS:GO Team finder</h1>
+                    <a class="btn btn-md btn-white ml-6" href="#!"><i class="fa fa-steam"></i>&nbsp; Login</a>
+                    <a class="btn btn-md active" href="#!"><i class="fa fa-google"></i>&nbsp; Google Play</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
+    <div class="youplay-content">
+        <section class="youplay-features container mnb-30" id="lobbies">
+            <div class="col-sm-12">
+                <div class="feature angled-bg">
+                    <div class="pull-left">
+                        <h3>Empty. Create lobby first!</h3>
+                    </div>
+                    <div class="pull-right">
+                        <a class="btn btn-md active" href="#!">Create lobby</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="feature angled-bg">
+                    <div class="pull-left">
+                        <div class="row">
+                            <a href="/asd"><img class="avatar"
+                                                src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/95/9561d6d2da2e4805bc0bc74f88d7856950412c47_full.jpg"
+                                                alt=""></a>
+                            <h3>Dynamic Fights</h3>
+                            <div>
+                                The most dynamic fights will not make you bored
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pull-right">
+                        <a class="btn btn-md active" href="#!">Enter lobby</a>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="youplay-content">
+        <h2 class="container h1" id="about">About</h2>
+        <section class="container">
+            <p class="lead">Eleifend sem ipsum conubia euismod potenti ante ad sem sed, dictumst hymenaeos torquent
+                quis. Class leo. Odio orci velit nulla habitasse conubia tempor eleifend dui suscipit mauris eget
+                mollis, molestie est justo. Ligula facilisi sociis dignissim
+                egestas lectus.</p>
+            <p class="lead">Habitant consequat consectetuer ipsum primis rutrum torquent curabitur tempus gravida nulla
+                integer nascetur tempus ultrices, hac taciti vitae. Vehicula velit praesent risus rutrum lectus.</p>
+        </section>
+    </div>
+
+    <footer class="youplay-footer-parallax" data-parallax="scroll" data-z-index="1"
+            data-natural-height="500" data-natural-width="1400" data-image-src="/images/footer-bg.jpg">
+
+        <div class="wrapper">
+
+            <div class="social">
+                <div class="container">
+                    <h3>Share it with friends</h3>
+                    {{--<strong>friends</strong>--}}
+                    <div class="social-icons">
+                        <div class="social-icon">
+                            <a href="#!">
+                                <i class="fa fa-facebook-square"></i>
+                                <span>Share on Facebook</span>
+                            </a>
+                        </div>
+                        <div class="social-icon">
+                            <a href="#!">
+                                <i class="fa fa-twitter-square"></i>
+                                <span>Follow on Twitter</span>
+                            </a>
+                        </div>
+                        <div class="social-icon">
+                            <a href="#!">
+                                <i class="fa fa-twitch"></i>
+                                <span>Watch on Twitch</span>
+                            </a>
+                        </div>
+                        <div class="social-icon">
+                            <a href="#!">
+                                <i class="fa fa-youtube-square"></i>
+                                <span>Watch on Youtube</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <div class="container">
+                    <strong><a href="https://molchan.me" target="_blank">Jadson</a></strong> &copy; {{ date('Y') }}. All
+                    rights reserved
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/parallax.min.js"></script>
+</section>
 </body>
 </html>
