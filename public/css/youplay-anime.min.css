@@ -2819,7 +2819,8 @@ img.rounded {
     padding: 3rem;
     margin-bottom: 3rem;
     /*text-align: center;*/
-    text-decoration: none
+    text-decoration: none;
+    z-index: 2;
 }
 
 .youplay-features .feature:hover {
@@ -3057,9 +3058,9 @@ img.rounded {
     position: relative;
     overflow: hidden;
     -webkit-transform: skew(-4deg);
-    -ms-transform: skew(-4deg);
-    -o-transform: skew(-4deg);
-    transform: skew(-4deg);
+    -ms-transform: skew(-8deg);
+    -o-transform: skew(-8deg);
+    transform: skew(-8deg);
     -webkit-transform-origin: 50% 50%;
     -ms-transform-origin: 50% 50%;
     -o-transform-origin: 50% 50%;
@@ -3210,7 +3211,7 @@ img.rounded {
     -ms-transform: skew(-4deg);
     -o-transform: skew(-4deg);
     transform: skew(-4deg);
-    z-index: 0;
+    z-index: 1;
     -o-transition: .3s background ease;
     transition: .3s background ease
 }
