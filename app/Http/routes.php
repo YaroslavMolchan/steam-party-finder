@@ -15,3 +15,4 @@ Route::get('/', 'DefaultController@index');
 Route::get('/login', 'DefaultController@login');
 Route::get('/logout', 'Auth\AuthController@logout');
 Route::get('/info', 'DefaultController@info');
+Route::get('/config-lobby', 'DefaultController@configLobby');

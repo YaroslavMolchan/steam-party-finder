@@ -10,56 +10,57 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/youplay-anime.min.css">
+    <link rel="stylesheet" href="/css/magnific-popup.css">
     <link rel="stylesheet" href="/css/custom.css">
     <title>TITLE</title>
 </head>
 <body>
 
-<nav class="navbar-youplay navbar navbar-default navbar-fixed-top navbar-small">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="off-canvas" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="index.html">
-                <img src="/images/logo.png" alt="">
-            </a>
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li>
-                    <a href="index.html#lobbies">Find team</a>
-                </li>
-                <li>
-                    <a href="index.html#about">About</a>
-                </li>
-                <li>
-                    <a href="index.html#share">Share</a>
-                </li>
-                @if (\Auth::guest())
-                    <li><a href="{{ SteamLogin::url(url('/login')) }}">Login</a></li>
-                @else
-                    <li><a href="/logout">Logout</a></li>
-                @endif
-            </ul>
-        </div>
-    </div>
-</nav>
+{{--<nav class="navbar-youplay navbar navbar-default navbar-fixed-top navbar-small">--}}
+    {{--<div class="container">--}}
+        {{--<div class="navbar-header">--}}
+            {{--<button type="button" class="navbar-toggle collapsed" data-toggle="off-canvas" data-target="#navbar"--}}
+                    {{--aria-expanded="false" aria-controls="navbar">--}}
+                {{--<span class="sr-only">Toggle navigation</span>--}}
+                {{--<span class="icon-bar"></span>--}}
+                {{--<span class="icon-bar"></span>--}}
+                {{--<span class="icon-bar"></span>--}}
+            {{--</button>--}}
+            {{--<a class="navbar-brand" href="index.html">--}}
+                {{--<img src="/images/logo.png" alt="">--}}
+            {{--</a>--}}
+        {{--</div>--}}
+        {{--<div id="navbar" class="navbar-collapse collapse">--}}
+            {{--<ul class="nav navbar-nav">--}}
+                {{--<li>--}}
+                    {{--<a href="index.html#lobbies">Find team</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a href="index.html#about">About</a>--}}
+                {{--</li>--}}
+                {{--<li>--}}
+                    {{--<a href="index.html#share">Share</a>--}}
+                {{--</li>--}}
+                {{--@if (\Auth::guest())--}}
+                    {{--<li><a href="{{ SteamLogin::url(url('/login')) }}">Login</a></li>--}}
+                {{--@else--}}
+                    {{--<li><a href="/logout">Logout</a></li>--}}
+                {{--@endif--}}
+            {{--</ul>--}}
+        {{--</div>--}}
+    {{--</div>--}}
+{{--</nav>--}}
 
 {{--@yield('content')--}}
 <section class="content-wrap">
-    <section class="youplay-banner banner-top big" data-parallax="scroll" data-z-index="1" data-natural-height="654"
+    <section class="youplay-banner banner-top" data-parallax="scroll" data-z-index="1" data-natural-height="654"
              data-natural-width="1400" data-image-src="/images/banner-bg.jpg">
         <div class="info">
             <div>
                 <div class="container">
                     <h1>CS:GO Team finder</h1>
                     <a class="btn btn-md btn-white ml-6" href="#!"><i class="fa fa-steam"></i>&nbsp; Login</a>
-                    <a class="btn btn-md active" href="#!"><i class="fa fa-google"></i>&nbsp; Google Play</a>
+                    <a class="btn btn-md active ajax-popup-align-top" href="/config-lobby"><i class="fa fa-google"></i>&nbsp;Config lobby</a>
                 </div>
             </div>
         </div>
@@ -73,20 +74,25 @@
                 <div class="youplay-single-match">
 
                     <div class="pull-left">
-                        <h5 class="text-center">NAVI</h5>
+
                         <div class="angled-img center-block">
                             <div class="img">
                                 <img src="/images/clan-navi.jpg" alt="NAVI">
                             </div>
                         </div>
-                        <div style="margin-top: 10px; margin-bottom: 10px;" class="text-center"><i class="fa fa-clock-o" aria-hidden="true"></i>1.5 <i class="fa fa-trophy" aria-hidden="true"></i>223 <i class="fa fa-dot-circle-o" aria-hidden="true"></i>312.3%</div>
+                        <h5 class="text-center">NAVI</h5>
                     </div>
 
                     <div class="pull-left ml-30">
                         <div class="angled-img">
-                            <div class="img">
-                                <img src="/images/clan-fnatic.jpg" alt="fnatic">
-                            </div>
+                            <a href="#about">
+                                <div class="img" data-toggle="tooltip" data-placement="top" title='
+<i class="fa fa-clock-o" aria-hidden="true"></i> 336<br />
+<i class="fa fa-trophy" aria-hidden="true"></i> 41.22%
+' data-html="true">
+                                    <img src="/images/clan-fnatic.jpg" alt="fnatic">
+                                </div>
+                            </a>
                         </div>
                         <h5 class="text-center">fnatic</h5>
                     </div>
@@ -109,13 +115,17 @@
 
 
                     <div class="pull-left ml-30">
-                        <h3 class="youplay-match-title">Red Dot Invitational</h3>
+                        <h3 class="youplay-match-title">
+                            Competitive
+                            <img src="/images/ranks/0.png" alt="*" height="20px"> -
+                            <img src="/images/ranks/3.png" alt="*" height="20px">
+                        </h3>
                         <div class="date">10th February 2016, 10:30 am</div>
                     </div>
 
                     <div class="pull-right">
-                        <a class="btn btn-md btn-white" href="#!" style="margin-top: 3rem;"><i class="fa fa-steam"></i>&nbsp;
-                            Login</a>
+                        <a class="btn btn-md btn-white" href="#!" style="margin-top: 3rem;"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;
+                            Enter lobby</a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -186,6 +196,25 @@
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/parallax.min.js"></script>
+    <script src="/js/magnific-popup.min.js"></script>
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+            $('.ajax-popup-align-top').magnificPopup({
+                type: 'ajax',
+                alignTop: true,
+                closeOnBgClick: false,
+                overflowY: 'scroll' // as we know that popup content is tall we set scroll overflow by default to avoid jump
+            });
+            $(document).on('focus', 'input, textarea', function(e){
+                $(this).parent().addClass('input-filled');
+            });
+            $(document).on('blur', 'input, textarea', function(e){
+                $(this).parent().removeClass('input-filled');
+            });
+        })
+    </script>
 </section>
 </body>
 </html>

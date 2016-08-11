@@ -21,4 +21,10 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [];
+
+
+    public function lobby()
+    {
+        return $this->hasOne('App\Lobby');
+    }
 }

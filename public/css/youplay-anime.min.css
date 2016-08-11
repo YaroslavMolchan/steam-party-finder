@@ -5268,9 +5268,9 @@ h2 + .youplay-news {
     margin: .5rem 0 2rem
 }
 
-.youplay-match-widget:hover .youplay-match-title, .youplay-matches-list .youplay-single-match:hover .youplay-match-title {
-    color: #b63a6b
-}
+/*.youplay-match-widget:hover .youplay-match-title, .youplay-matches-list .youplay-single-match:hover .youplay-match-title {*/
+    /*color: #b63a6b*/
+/*}*/
 
 .youplay-forum > li .cell-info .forums-list li {
     padding: 0 1rem 0 0
